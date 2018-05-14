@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/matches_wh"
+    tools:context=".MainActivity">
+
+    <ListView
+        android:id="@+id/list_view"
+        android:orientation="vertical"
+        style="@style/matches_wh"
+        android:divider="@null"
+        android:dividerHeight="@dimen/zeroDPs"/>
+
+    <!--Empty View is only visible when the list has no items.-->
+    <TextView
+        android:id="@+id/empty_text_view"
+        style="@style/wrappers_delight"
+        android:layout_centerInParent="true"
+        android:contentDescription="@string/no_articles"
+        android:textAppearance="?android:textAppearanceMedium"/>
+
+    <!--Loading Indicator will be used when info is being parsed.-->
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        style="@style/Widget.AppCompat.ProgressBar"/>
+
+</RelativeLayout>
+
+

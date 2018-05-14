@@ -1,0 +1,91 @@
+<resources>
+    <string name="app_name">NewsApp1</string>
+
+    <!--Error Message Strings-->
+    <string name="no_internet_connection">There is no available internet connection.</string>
+
+    <string name="no_articles">No articles found with that query.</string>
+
+    <string name="http_exception">Problem making the HTTP request.</string>
+
+    <string name="problem_building_URL">Problem building the URL.</string>
+
+    <string name="error_response_code">Error response code: </string>
+
+    <string name="problem_JSON_response">Problem retrieving News Article\'s JSON results.</string>
+
+    <string name="problem_parsing_JSON">Problem parsing the earthquake JSON results.</string>
+
+
+    <!--String for potential date published format change-->
+    <string name="at_time"></string>
+
+
+    <!--Content Description Strings-->
+    <string name="article_headline_string">News Article Headline</string>
+
+    <string name="news_section_string">Section of current News Article</string>
+
+    <string name="published_date_string">Date the article was published</string>
+
+    <string name="article_author_string">Name of the author who wrote article</string>
+
+
+    <!--Settings strings-->
+    <string name="settings_menu_item">Settings</string>
+    <string name="settings_title">News Settings</string>
+
+    <!--Strings for Order By preferences [CHAR LIMIT=30]-->
+    <string name="settings_order_by_label">Order By</string>
+    <string name="settings_order_by_key" translatable="false">order_by</string>
+    <string name="settings_order_by_default" translatable="false">@string/settings_order_by_section_value</string>
+
+    <!--Label for Order By Section option [CHAR LIMIT=20]-->
+    <string name="settings_order_by_section_label">Section</string>
+    <string name="settings_order_by_section_key" translatable="false"></string>
+    <string name="settings_order_by_section_default" translatable="false">@string/settings_order_by_section_value</string>
+    <string name="settings_order_by_section_value" translatable="false"></string>
+
+    <!--Section's Labels to choose from-->
+    <string name="settings_section_title_label">Select Articles by Section</string>
+    <string name="settings_section_default_label">All</string>
+    <string name="settings_world_news_label">World News</string>
+    <string name="settings_business_label">Business</string>
+    <string name="settings_politics_label">Politics</string>
+    <string name="settings_society_label">Society</string>
+    <string name="settings_art_and_design_label">Art and Design</string>
+    <string name="settings_music_label">Music</string>
+    <string name="settings_film_label">Film</string>
+    <string name="settings_opinion_label">Opinion</string>
+    <string name="settings_sports_label">Sports</string>
+    <string name="settings_football_label">Football</string>
+
+
+    <!--Section Values-->
+    <string name="settings_section_default_value" translatable="false"></string>
+    <string name="settings_world_news_value" translatable="false">world</string>
+    <string name="settings_business_value" translatable="false">business</string>
+    <string name="settings_politics_value" translatable="false">politics</string>
+    <string name="settings_society_value" translatable="false">society</string>
+    <string name="settings_art_and_design_value" translatable="false">art</string>
+    <string name="settings_music_value" translatable="false">music</string>
+    <string name="settings_film_value" translatable="false">film</string>
+    <string name="settings_opinion_value" translatable="false">opinion</string>
+    <string name="settings_sports_value" translatable="false">sport</string>
+    <string name="settings_football_value" translatable="false">football</string>
+
+
+    <string name="settings_most_recent_key">most</string>
+    <string name="settings_most_recent_default">recent</string>
+
+
+
+    <string name="settings_order_by_most_recent_label">Most Recent</string>
+    <string name="settings_order_by_most_recent_value" translatable="false">time</string>
+
+
+
+
+
+
+</resources>

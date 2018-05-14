@@ -1,0 +1,35 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/matches_wh"
+    android:orientation="vertical"
+    android:padding="@dimen/seizeDPs">
+
+    <TextView
+        android:id="@+id/news_section"
+        style="@style/news_list_items"
+        android:maxLines="1"
+        android:contentDescription="@string/news_section_string"/>
+
+    <TextView
+        android:id="@+id/article_headline"
+        style="@style/wrappers_delight"
+        android:textSize="16sp"
+        android:maxLines="2"
+        android:textStyle="bold"
+        android:contentDescription="@string/article_headline_string"/>
+
+    <TextView
+        android:id="@+id/article_author"
+        style="@style/news_list_items"
+        android:maxLines="1"
+        android:contentDescription="@string/article_author_string"/>
+
+
+    <TextView
+        android:id="@+id/published_date"
+        style="@style/news_list_items"
+        android:maxLines="1"
+        android:textColor="@color/red_alert"
+        android:contentDescription="@string/published_date_string"/>
+
+
+</LinearLayout>
