@@ -114,22 +114,16 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
         String orderBySection = sharedPrefs.getString(
                 getString(R.string.settings_order_by_section_key),
                 getString(R.string.settings_order_by_section_value));
-//        String mostRecent = sharedPrefs.getString(
-//                getString(R.string.settings_most_recent_key),
-//                getString(R.string.settings_most_recent_default));
-//        String orderBy = sharedPrefs.getString(
-//                getString(R.string.settings_order_by_key),
-//                getString(R.string.settings_order_by_default));
+
 
 
         Uri baseUri = Uri.parse(REQUEST_GUARDIAN_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
         //Url is appended by query parameters and their values
+        uriBuilder.appendQueryParameter("orderby", orderBySection);
         uriBuilder.appendQueryParameter("show-tags", "contributor");
         uriBuilder.appendQueryParameter("api-key", "9b43d099-66a2-439f-8632-83c5740629ae");
-        uriBuilder.appendQueryParameter("orderby", orderBySection);
-
-
+        uriBuilder.appendQueryParameter("section", orderBySection);
 
 
         //Create a new loader for the given URL
