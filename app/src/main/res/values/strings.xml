@@ -44,9 +44,9 @@
 
     <!--Label for Order By Section option [CHAR LIMIT=20]-->
     <string name="settings_order_by_section_label">Section</string>
-    <string name="settings_order_by_section_key" translatable="false">choice</string>
+    <string name="settings_order_by_section_key" translatable="false">order_by</string>
     <string name="settings_order_by_section_default" translatable="false">@string/settings_order_by_section_value</string>
-    <string name="settings_order_by_section_value" translatable="false"></string>
+    <string name="settings_order_by_section_value" translatable="false">section</string>
 
     <!--Section's Labels to choose from-->
     <string name="settings_section_title_label">Select Articles by Section</string>
@@ -77,7 +77,7 @@
     <string name="settings_football_value" translatable="false">football</string>
 
 
-    <string name="settings_most_recent_key">most</string>
+    <string name="settings_most_recent_key">most_recent</string>
     <string name="settings_most_recent_default">recent</string>
 
 

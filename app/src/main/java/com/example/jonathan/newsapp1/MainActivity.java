@@ -24,6 +24,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
 
+    private static final String LOG_TAG = MainActivity.class.getName();
 
     //URL for news from the Guardian API
     private static final String REQUEST_GUARDIAN_URL =
@@ -111,19 +112,31 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
+
+//        String orderBy = sharedPrefs.getString(
+//                getString(R.string.settings_order_by_key),
+//                getString(R.string.settings_order_by_default));
+
+
+//        String section = sharedPrefs.getString(
+//                getString(R.string.settings_order_by_section_key),
+//                getString(R.string.settings_section_default_value));
+
+
         String orderBySection = sharedPrefs.getString(
                 getString(R.string.settings_order_by_section_key),
                 getString(R.string.settings_order_by_section_value));
 
-
-
         Uri baseUri = Uri.parse(REQUEST_GUARDIAN_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
         //Url is appended by query parameters and their values
-        uriBuilder.appendQueryParameter("orderby", orderBySection);
-        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        //uriBuilder.appendQueryParameter(" ", section);
         uriBuilder.appendQueryParameter("api-key", "9b43d099-66a2-439f-8632-83c5740629ae");
+        uriBuilder.appendQueryParameter("show-tags", "contributor");
+        //uriBuilder.appendQueryParameter("mostrecent", orderBy);
         uriBuilder.appendQueryParameter("section", orderBySection);
+
+       Log.i(LOG_TAG, "********************************************************************************** " + uriBuilder.toString());
 
 
         //Create a new loader for the given URL
