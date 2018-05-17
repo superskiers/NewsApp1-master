@@ -64,7 +64,7 @@
 
 
     <!--Section Values-->
-    <string name="settings_section_default_value" translatable="false"></string>
+    <string name="settings_section_default_value" translatable="false">all</string>
     <string name="settings_world_news_value" translatable="false">world</string>
     <string name="settings_business_value" translatable="false">business</string>
     <string name="settings_technology_value" translatable="false">technology</string>

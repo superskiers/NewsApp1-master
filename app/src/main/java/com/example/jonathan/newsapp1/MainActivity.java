@@ -11,7 +11,6 @@ import android.net.Uri;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -23,8 +22,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements LoaderManager.LoaderCallbacks<List<News>> {
-
-    private static final String LOG_TAG = MainActivity.class.getName();
 
     //URL for news from the Guardian API
     private static final String REQUEST_GUARDIAN_URL =
@@ -112,36 +109,52 @@ public class MainActivity extends AppCompatActivity implements LoaderManager.Loa
     public Loader<List<News>> onCreateLoader(int i, Bundle bundle) {
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 
-
-//        String orderBy = sharedPrefs.getString(
-//                getString(R.string.settings_order_by_key),
-//                getString(R.string.settings_order_by_default));
-
-
-//        String section = sharedPrefs.getString(
-//                getString(R.string.settings_order_by_section_key),
-//                getString(R.string.settings_section_default_value));
-
-
+        //orderBySection is used to narrow down the user's preferred section
         String orderBySection = sharedPrefs.getString(
                 getString(R.string.settings_order_by_section_key),
                 getString(R.string.settings_order_by_section_value));
 
         Uri baseUri = Uri.parse(REQUEST_GUARDIAN_URL);
         Uri.Builder uriBuilder = baseUri.buildUpon();
+
         //Url is appended by query parameters and their values
-        //uriBuilder.appendQueryParameter(" ", section);
-        uriBuilder.appendQueryParameter("api-key", "9b43d099-66a2-439f-8632-83c5740629ae");
+        uriBuilder.appendQueryParameter("api-key", "test");
         uriBuilder.appendQueryParameter("show-tags", "contributor");
-        //uriBuilder.appendQueryParameter("mostrecent", orderBy);
+        uriBuilder.appendQueryParameter("orderby", "all");
+
+        //If statements are to bring you to selected Section
+        if(orderBySection == getResources().getString(R.string.settings_world_news_value)) {
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
+        if(orderBySection == getResources().getString(R.string.settings_business_value)){
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
+        if(orderBySection == getResources().getString(R.string.settings_technology_value)) {
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
+        if(orderBySection == getResources().getString(R.string.settings_politics_value)) {
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
+        if(orderBySection == getResources().getString(R.string.settings_society_value)) {
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
+        if(orderBySection == getResources().getString(R.string.settings_music_value)) {
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
+        if(orderBySection == getResources().getString(R.string.settings_film_value)) {
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
+
+        if(orderBySection == getResources().getString(R.string.settings_sports_value)) {
         uriBuilder.appendQueryParameter("section", orderBySection);
-
-       Log.i(LOG_TAG, "********************************************************************************** " + uriBuilder.toString());
-
-
+        }
+        if(orderBySection == getResources().getString(R.string.settings_football_value)) {
+            uriBuilder.appendQueryParameter("section", orderBySection);
+        }
         //Create a new loader for the given URL
         return new ArticleLoader(this, uriBuilder.toString());
     }
+
     @Override
     public void onLoadFinished(Loader<List<News>> loader, List<News> articles) {
 

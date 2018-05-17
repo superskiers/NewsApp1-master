@@ -12,7 +12,7 @@
     <TextView
         android:id="@+id/article_headline"
         style="@style/wrappers_delight"
-        android:textSize="16sp"
+        android:textSize="@dimen/seizeSP"
         android:maxLines="2"
         android:textStyle="bold"
         android:contentDescription="@string/article_headline_string"/>
