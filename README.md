@@ -8,5 +8,5 @@ In it you will find various ideas and skills as taught in the course, they are:
  - Using an AsynTask
  - Doing network operations independent of the Activity lifecycle
  
- 
+ ![](NewsAppScreenShots.png)
  
